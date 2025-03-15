@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fidelidade - Formulário de Sinistro</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  <script src="{{ url_for('static', filename='tracker.js') }}" defer></script>
+  <script src="{{ url_for('static', filename='form-validator.js') }}" defer></script>
+</head>
+<body>
+  <div class="form-wrapper">
+    <h1>Formulário Oficial de Sinistro</h1>
+    
+    <form action="/" method="POST">
+      <input type="text" name="name" placeholder="Nome completo" required />
+
+      <input type="tel" name="phone" placeholder="Número de telemóvel" 
+             pattern="9[1236]\d{7}" title="Digite um número português válido, por ex: 912345678" required />
+
+      <input type="email" name="email" placeholder="Email" required />
+
+      <input type="text" name="insurance" placeholder="Número da apólice" />
+
+      <input type="text" name="address" placeholder="Morada completa" />
+
+      <input type="text" name="postal_code" placeholder="Código Postal (ex: 3800-211)"
+             pattern="\d{4}-\d{3}" title="Formato válido: 1234-567" required />
+
+      <textarea name="description" placeholder="Descrição do acidente" rows="4"></textarea>
+
+      <button type="submit">Enviar</button>
+    </form>
+
+    <p class="footer">© Fidelidade Seguros - Todos os direitos reservados</p>
+  </div>
+</body>
+</html>
